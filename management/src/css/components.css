@@ -1,0 +1,23 @@
+.header{
+	width:100%;
+	height:60px;
+	background:#333;
+	color:white;
+}
+.nav{
+	position: absolute;
+	top:61px;
+	width:200px;
+	bottom:0;
+	background: #333;
+	overflow-y: scroll;
+}
+.info{
+	position: absolute;
+	top:61px;
+	left:201px;
+	bottom:0;
+	right:0;
+	overflow-y:scroll;
+	border:1px solid #666;
+}
