@@ -5,14 +5,8 @@ const SubMenu = Menu.SubMenu;
 
 class Sider extends React.Component {
   state = {
-    theme: 'dark',
+    theme: 'light',
     current: '',
-  }
-
-  changeTheme = (value) => {
-    this.setState({
-      theme: value ? 'dark' : 'light',
-    });
   }
 
   handleClick = (e) => {
@@ -28,14 +22,6 @@ class Sider extends React.Component {
     console.log(match);
     return (
       <div>
-        <Switch
-          checked={this.state.theme === 'dark'}
-          onChange={this.changeTheme}
-          checkedChildren="Dark"
-          unCheckedChildren="Light"
-        />
-        <br />
-        <br />
         <Menu
           theme={this.state.theme}
           onClick={this.handleClick}
