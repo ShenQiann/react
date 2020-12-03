@@ -45,29 +45,31 @@ class App extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.form.validateFields((err, values) => {
-      if (!err) {
-        console.log('Received values of form: ', values);
-        if(!!values) {
-          let username = values.userName;
-          let password = values.password;
-          let remember = values.remember;
-          if(!!remember) {
-            setStore('userInfo',JSON.stringify(values))
-          }
-          this.props.reqGetUser(username,password); 
-        }
-      }
-    });
+    this.props.history.push('/index')
+    // this.props.form.validateFields((err, values) => {
+    //   if (!err) {
+    //     console.log('Received values of form: ', values);
+    //     if(!!values) {
+    //       let username = values.userName;
+    //       let password = values.password;
+    //       let remember = values.remember;
+    //       if(!!remember) {
+    //         setStore('userInfo',JSON.stringify(values))
+    //       }
+    //       //this.props.reqGetUser(username,password); 
+          
+    //     }
+    //   }
+    // });
   }
 
   render() {
-    console.log(this.props.app.isFetching);
-    this.props.user ? this.props.history.push('/index'):null
+    //console.log(this.props.app.isFetching);
+    //this.props.user ? this.props.history.push('/index'):null
     const { getFieldDecorator } = this.props.form;
     return (
       <div className="App">
-        {this.props.app.isFetching ?<div>loading.......</div>:null}
+        {/* {this.props.app.isFetching ?<div>loading.......</div>:null} */}
         <div className="container">
           <Row>
           <Col md={8} lg={7} offset={13}>
@@ -120,7 +122,7 @@ export default connect(
 }),
 (dispatch) => {
   return bindActionCreators({
-    reqGetUser: Actions.getUser,
+    //reqGetUser: Actions.getUser,
   }, dispatch);
 }
 )(WrappedNormalLoginForm);
